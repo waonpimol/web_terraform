@@ -35,7 +35,7 @@ yes
 http://<public_ip>/sports_rental_system/customer/frontend/login.html
 ```
 
-### 6. ข้อมูลสำหรับเข้าใช้งาน (Test Account)
+### 5. ข้อมูลสำหรับเข้าใช้งาน (Test Account)
 #### เจ้าหน้าที่เช่า-คืนอุปกรณ์ gmail: rattana@nu.ac.th password: rattana_jaidee
 #### ผู้ดูแลคลัง gmail: sumet@nu.ac.th password: sumet_jaidee
 #### อธิการบดี gmail: somchai@nu.ac.th password: hashed_pw004
