@@ -4,6 +4,7 @@ variable "aws_region" {
   default     = "ap-southeast-1"
 }
 
+# ใส่ key pairs ของคุณ
 variable "key_name" {
   description = "ชื่อ Key Pair"
   type        = string
