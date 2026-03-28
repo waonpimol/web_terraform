@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+<meta charset="UTF-8" />
+<title>รายการจอง (เจ้าหน้าที่)</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bookings.css" />
+</head>
+
+<body>
+
+<header class="main-header">
+
+    <div class="header-top">
+
+        <div class="brand">
+            <span class="brand-name">ระบบเช่าอุปกรณ์กีฬา</span>
+            <small>Sports Equipment Rental System</small>
+        </div>
+
+        <div class="user-zone">
+            <a href="profile.html" class="profile-btn">👤 โปรไฟล์</a>
+        </div>
+
+    </div>
+
+    <div class="header-bottom">
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item">เช่าอุปกรณ์</a>
+        <a href="bookings.html" class="nav-item active">รายการเช่า</a>
+        <a href="return.html" class="nav-item">คืนอุปกรณ์</a>
+        <a href="staff-history.html" class="nav-item">ประวัติการเช่า</a>
+        <a href="equipment_list.html" class="nav-item">อุปกรณ์ทั้งหมด</a>
+        <a href="maintenance.html" class="nav-item">ซ่อมอุปกรณ์</a>
+      </nav>
+    </div>
+
+</header>
+
+<h2 class="page-title">รายการจองทั้งหมด</h2>
+
+<div class="page-container">
+
+    <!-- STATUS TABS -->
+    <div class="booking-status-tabs">
+
+        <button class="status-tab active" data-status="WAITING_STAFF">
+            รออนุมัติ (<span id="count-WAITING_STAFF">0</span>)
+        </button>
+
+        <button class="status-tab" data-status="CONFIRMED_WAITING_PICKUP">
+            รอรับอุปกรณ์ (<span id="count-CONFIRMED_WAITING_PICKUP">0</span>)
+        </button>
+
+        <button class="status-tab" data-status="CANCELLED">
+            คำขอยกเลิก (<span id="count-CANCELLED">0</span>)
+        </button>
+
+    </div>
+
+    <!-- LIST -->
+    <div class="booking-list" id="bookingList">
+        <p class="loading">กำลังโหลด...</p>
+    </div>
+
+</div>
+
+<div id="cancelModal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <h3>ยกเลิกการจอง</h3>
+
+        <p>กรุณาระบุเหตุผล:</p>
+
+        <textarea
+            id="cancelReasonInput"
+            placeholder="เช่น อุปกรณ์ไม่พร้อม / ลูกค้าไม่มาตามนัด"
+        ></textarea>
+
+        <div class="modal-actions">
+
+            <button id="cancelModalClose"
+                class="btn-outline">
+                ย้อนกลับ
+            </button>
+
+            <button id="cancelModalConfirm"
+                class="btn-danger">
+                ยืนยันยกเลิก
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="bookings.js"></script>
+
+</body>
+</html>

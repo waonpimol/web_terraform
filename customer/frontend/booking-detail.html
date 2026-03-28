@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>รายละเอียดการจอง</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/booking-detail.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+
+        <div class="header-top">
+            <div class="brand">
+                <span class="brand-name">ระบบจองอุปกรณ์กีฬา</span>
+                <small>Sports Equipment Booking System</small>
+            </div>
+
+            <div class="user-zone">
+                <div class="badge orange" id="topPoints">⭐ - คะแนน</div>
+                <a class="badge purple" href="coupon.html">🎟 คูปอง</a>
+                <a href="profile.html" class="profile-btn">โปรไฟล์</a>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="main-nav">
+                <a href="field-booking.html" class="nav-item">เลือกอุปกรณ์</a>
+                <a href="my-bookings.html" class="nav-item active">รายการจอง</a>
+                <a href="history.html" class="nav-item">ประวัติการเช่า</a>
+                <a href="refund-history.html" class="nav-item">ประวัติการยกเลิก</a>
+                <a href="history_point.html" class="nav-item">ประวัติการใช้แต้ม</a>
+                <a href="status_maintenance.html" class="nav-item">สถานะการซ่อม</a>
+            </nav>
+        </div>
+
+    </header>
+
+    <h2 class="page-title">รายละเอียดการจอง</h2>
+
+    <div class="container">
+
+        <div id="loading">กำลังโหลด...</div>
+
+        <div id="detailBox" class="detail-box hidden">
+
+            <section class="info">
+                <h3>ข้อมูลการจอง</h3>
+
+                <div class="row"><span>รหัส:</span> <b id="bkCode"></b></div>
+                <div class="row"><span>วันรับ:</span> <b id="pickup"></b></div>
+                <div class="row"><span>คืน:</span> <b id="return"></b></div>
+                <div class="row"><span>สถานะ:</span> <b id="bookingStatus"></b></div>
+                <div class="row"><span>การชำระเงิน:</span> <b id="paymentStatus"></b></div>
+            </section>
+
+            <section class="items">
+                <h3>รายการที่จอง</h3>
+                <div id="itemList"></div>
+            </section>
+
+            <section class="price">
+                <h3>สรุปราคา</h3>
+
+                <div class="row"><span>ราคารวม</span><b id="total"></b></div>
+                <div class="row"><span>ส่วนลด</span><b id="discount"></b></div>
+                <div class="row"><span>แต้ม</span><b id="pointsUsed"></b></div>
+
+                <div id="slipBox" class="slip-box hidden">
+                    <span>สลิปการชำระเงิน</span>
+                    <div>
+                        <a id="slipLink" target="_blank">
+                            <img id="slipImg" />
+                        </a>
+                    </div>
+                </div>
+
+
+                <hr>
+
+                <div class="row total"><span>สุทธิ</span><b id="net"></b></div>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="booking-detail.js"></script>
+
+</body>
+
+</html>

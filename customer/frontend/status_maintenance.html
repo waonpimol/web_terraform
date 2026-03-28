@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <title>สถานะการซ่อมของฉัน</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/maintenance.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+
+    <div class="header-top">
+
+      <div class="brand">
+        <span class="brand-name">ระบบจองอุปกรณ์กีฬา</span>
+        <small>Sports Equipment Booking System</small>
+      </div>
+
+      <div class="user-zone">
+        <div class="badge orange" id="topPoints">⭐ - คะแนน</div>
+        <a class="badge purple" href="coupon.html">🎟 คูปอง</a>
+        <a href="profile.html" class="profile-btn">👤 โปรไฟล์</a>
+      </div>
+
+    </div>
+
+    <div class="header-bottom">
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item">เลือกอุปกรณ์</a>
+        <a href="my-bookings.html" class="nav-item">รายการจอง</a>
+        <a href="history.html" class="nav-item">ประวัติการเช่า</a>
+        <a href="refund-history.html" class="nav-item">ประวัติการยกเลิก</a>
+        <a href="history_point.html" class="nav-item">ประวัติการใช้แต้ม</a>
+        <a href="status_maintenance.html" class="nav-item active">สถานะการซ่อม</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <div class="container">
+
+    <h2 class="page-title">สถานะการซ่อมของฉัน</h2>
+
+    <div class="list-layout">
+
+      <!-- FILTER LEFT -->
+      <div class="filter-box">
+
+        <div class="filter-group">
+          <input type="text" id="searchInput" placeholder="ค้นหาอุปกรณ์">
+        </div>
+
+        <div class="filter-group">
+          <select id="statusFilter">
+            <option value="">-- ทุกสถานะ --</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <select id="damageFilter">
+            <option value="">-- ทุกระดับความเสียหาย --</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <button id="resetFilters" class="btn-reset">
+            รีเซ็ตตัวกรอง
+          </button>
+        </div>
+
+      </div>
+
+      <!-- TABLE RIGHT -->
+      <div class="list-content">
+
+        <table class="maintenance-table">
+          <thead>
+            <tr>
+              <th>รหัสอุปกรณ์</th>
+              <th>รายละเอียด</th>
+              <th>วันที่แจ้ง</th>
+              <th>ระดับความเสียหาย</th>
+              <th>สถานะ</th>
+            </tr>
+          </thead>
+
+          <tbody id="maintenanceList">
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="status_maintenance.js"></script>
+</body>
+
+</html>

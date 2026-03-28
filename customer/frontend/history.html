@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ประวัติการเช่า</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/rental_history.css" />
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="header-top">
+            <div class="brand">
+                <span class="brand-name">ระบบจองอุปกรณ์กีฬา</span>
+                <small>Sports Equipment Booking System</small>
+            </div>
+
+            <div class="user-zone">
+                <div class="badge orange" id="topPoints">⭐ - คะแนน</div>
+                <a class="badge purple" href="coupon.html">🎟 คูปอง</a>
+                <a href="profile.html" class="profile-btn">👤 โปรไฟล์</a>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item ">เลือกอุปกรณ์</a>
+                <a href="my-bookings.html" class="nav-item">รายการจอง</a>
+                <a href="history.html" class="nav-item active">ประวัติการเช่า</a>
+                <a href="refund-history.html" class="nav-item">ประวัติการยกเลิก</a>
+                <a href="history_point.html" class="nav-item">ประวัติการใช้แต้ม</a>
+                <a href="status_maintenance.html" class="nav-item">สถานะการซ่อม</a>
+            </nav>
+        </div>
+
+        <div class="history-container">
+            <h2>ประวัติการเช่า</h2>
+
+            <div id="loading">กำลังโหลด...</div>
+
+            <div id="historyBox" class="hidden">
+                <div id="historyList"></div>
+            </div>
+        </div>
+
+        <div id="reviewModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>เขียนรีวิวอุปกรณ์</h3>
+                <p id="reviewTargetName" style="font-weight: bold; color: #555;"></p>
+
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                
+                 <input type="hidden" id="ratingScore" value="5">
+                 
+                <textarea id="reviewText" placeholder="เขียนความรู้สึกหลังใช้งาน..." rows="4"></textarea>
+
+                <div class="modal-actions">
+                    <button type="button" onclick="closeReviewModal()" class="btn-secondary">ยกเลิก</button>
+                    <button type="button" onclick="submitReview()" class="btn-primary">บันทึกรีวิว</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="rental_history.js"></script>
+</body>
+
+</html>

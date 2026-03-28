@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>เลือกอุปกรณ์ | ระบบเช่าอุปกรณ์กีฬา</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap" rel="stylesheet">
+
+  <!-- Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <link rel="stylesheet" href="css/equipment.css" />
+</head>
+
+<body id="equipmentPage">
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+
+    <div class="header-top">
+
+      <div class="brand">
+        <span class="brand-name">ระบบจองอุปกรณ์กีฬา</span>
+        <small>Sports Equipment Booking System</small>
+      </div>
+
+      <div class="user-zone">
+        <div class="badge orange" id="topPoints">⭐ - คะแนน</div>
+        <a class="badge purple" href="coupon.html">🎟 คูปอง</a>
+        <a href="profile.html" class="profile-btn">👤 โปรไฟล์</a>
+      </div>
+
+    </div>
+
+    <div class="header-bottom">
+      <nav class="main-nav">
+        <a href="index.html" class="nav-item active">เลือกอุปกรณ์</a>
+        <a href="my-bookings.html" class="nav-item">รายการจอง</a>
+        <a href="history.html" class="nav-item">ประวัติการเช่า</a>
+        <a href="refund-history.html" class="nav-item">ประวัติการยกเลิก</a>
+        <a href="history_point.html" class="nav-item">ประวัติการใช้แต้ม</a>
+        <a href="status_maintenance.html" class="nav-item">สถานะการซ่อม</a>
+      </nav>
+    </div>
+
+    <div class="booking-bar">
+      <div class="booking-inner">
+
+        <a class="branch-display" href="branches.html">
+          📍 สาขา: <strong id="selectedBranch"></strong>
+        </a>
+
+        <div class="booking-actions">
+          <a href="index.html" class="booking-btn active">จองอุปกรณ์</a>
+          <a href="field-booking.html" class="booking-btn">จองสนาม</a>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ================= MAIN ================= -->
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <section class="filter-block">
+        <h4>วันที่ต้องการเช่า</h4>
+        <input type="text" id="rentDate" class="calendar-input" placeholder="เลือกวันที่" />
+      </section>
+
+      <section class="filter-block">
+        <h4>ช่วงเวลา</h4>
+        <select id="timeSlot" class="time-select">
+          <option value="">-- เลือกช่วงเวลา --</option>
+        </select>
+      </section>
+
+      <div class="duration-box">
+        <button class="duration-btn" data-hour="1">1 ชม.</button>
+        <button class="duration-btn" data-hour="2">2 ชม.</button>
+        <button class="duration-btn active" data-hour="3">3 ชม.</button>
+        <button class="duration-btn" data-hour="4">4 ชม.<small>+100 บาท</small></button>
+        <button class="duration-btn" data-hour="5">5 ชม.<small>+200 บาท</small></button>
+        <button class="duration-btn" data-hour="6">6 ชม.<small>+300 บาท</small></button>
+      </div>
+
+      <input type="hidden" id="rentHours" value="3">
+
+      <section class="filter-block">
+        <h4>หมวดกีฬา</h4>
+        <div class="checkbox-group" id="categoryList">
+          กำลังโหลดหมวดกีฬา...
+        </div>
+      </section>
+
+      <section class="filter-block">
+        <h4>ช่วงราคา (บาท/ชม.)</h4>
+
+        <div class="price-range-box">
+          <div class="price-inputs">
+            <input type="number" id="minPriceInput" placeholder="ต่ำสุด" min="0" />
+            <span>-</span>
+            <input type="number" id="maxPriceInput" placeholder="สูงสุด" min="0" />
+          </div>
+
+          <input type="range" id="priceMin" min="0" max="500" value="0" />
+          <input type="range" id="priceMax" min="0" max="500" value="500" />
+        </div>
+      </section>
+      <button id="resetFilters" class="reset-btn" type="button">
+        รีเซ็ตตัวกรอง
+      </button>
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <div class="search-bar">
+
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="ค้นหาอุปกรณ์..." />
+        </div>
+
+        <a href="cart.html" class="cart-btn">
+          🛒 ตะกร้า
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+      </div>
+
+      <div class="grid" id="equipmentGrid">
+        <p class="loading-text">กำลังโหลดอุปกรณ์...</p>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/th.js"></script>
+
+  <script>
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+
+    flatpickr("#rentDate", {
+      locale: "th",
+      dateFormat: "d/m/Y",
+      enable: [today, tomorrow]
+    });
+  </script>
+
+  <!-- TEMPLATE FOR EQUIPMENT CARD -->
+  <template id="equipmentCardTemplate">
+    <div class="equipment-card">
+
+      <img src="">
+      <h5 class="name"></h5>
+      <p class="price"></p>
+
+      <div class="card-qty-controls">
+        <button class="qty-minus">−</button>
+        <span class="qty-num">0</span>
+        <button class="qty-plus">+</button>
+      </div>
+
+      <span class="stock"></span>
+
+    </div>
+  </template>
+</body>
+
+</html>

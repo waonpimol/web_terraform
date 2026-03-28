@@ -1,0 +1,277 @@
+/* ================= RESET ================= */
+
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f3f5f9;
+    color: #111827;
+}
+
+/* ================= HEADER ================= */
+
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header-top {
+    max-width: 1400px;
+    margin: auto;
+    padding: 16px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-name {
+    color: #ff7a00;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.brand small {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.profile-btn {
+    background: #f3f4f6;
+    padding: 6px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #111827;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.profile-btn:hover {
+    background: #e5e7eb;
+}
+
+/* ================= NAV ================= */
+
+.header-bottom {
+    border-top: 1px solid #f0f0f0;
+}
+
+.main-nav {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 28px;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #4b5563;
+    padding: 14px 0;
+    border-bottom: 2px solid transparent;
+    font-size: 14px;
+}
+
+.nav-item.active {
+    color: #ff7a00;
+    border-bottom: 2px solid #ff7a00;
+    font-weight: 600;
+}
+
+/* ================= LAYOUT ================= */
+
+.container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    padding: 32px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.sidebar label {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+.sidebar select,
+.sidebar input {
+    width: 100%;
+    padding: 9px;
+    margin-top: 4px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 13px;
+    background: #fafafa;
+}
+
+.sidebar select:focus,
+.sidebar input:focus {
+    outline: none;
+    border-color: #ff7a00;
+}
+
+.btn-reset {
+    margin-top: 14px;
+    padding: 10px;
+    background: #ff7a00;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-reset:hover {
+    background: #e66c00;
+}
+
+/* ================= KPI ================= */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.kpi-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+}
+
+/* 🔥 รองรับ 6 KPI */
+.kpi-card:nth-child(1) {
+    border-top: 4px solid #3b82f6;
+}
+
+/* blue */
+.kpi-card:nth-child(2) {
+    border-top: 4px solid #22c55e;
+}
+
+/* green */
+.kpi-card:nth-child(3) {
+    border-top: 4px solid #f59e0b;
+}
+
+/* orange */
+.kpi-card:nth-child(4) {
+    border-top: 4px solid #ef4444;
+}
+
+/* red */
+.kpi-card:nth-child(5) {
+    border-top: 4px solid #8b5cf6;
+}
+
+/* purple */
+.kpi-card:nth-child(6) {
+    border-top: 4px solid #14b8a6;
+}
+
+/* teal */
+
+.kpi-title {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.kpi-value {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    margin: 0 0 14px;
+    font-size: 16px;
+}
+
+/* ================= GRID ================= */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* ================= CHART ================= */
+
+canvas {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+/* popular */
+#popularChart {
+    height: 420px !important;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+
+    .main {
+        order: 1;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
