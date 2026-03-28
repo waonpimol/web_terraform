@@ -40,5 +40,6 @@ http://<public_ip>/sports_rental_system/customer/frontend/login.html
 #### ผู้ดูแลคลัง gmail: sumet@nu.ac.th password: sumet_jaidee
 #### อธิการบดี gmail: somchai@nu.ac.th password: hashed_pw004
 #### ผู้บริหาร gmail: Winai@nu.ac.th password: winai_jaidee
+#### ผู้ใช้งาน gmail: aonpimolw66@nu.ac.th password: nu123456
 
 * ใช้สำหรับมหาวิทยาลัยนเรศวร
