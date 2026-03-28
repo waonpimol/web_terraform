@@ -16,6 +16,8 @@ aws configure
 * AWS Secret Key
 * Region (เช่น ap-southeast-1)
 
+#### อย่าลืม create key pairs ใน aws
+
 ### 3. Initialize และตรวจสอบ
 ```
 terraform init
