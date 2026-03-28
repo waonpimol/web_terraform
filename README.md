@@ -1,11 +1,6 @@
 ## วิธีรันโปรเจกต์ (Terraform)
 
-### 1. Clone Repository
-```
-git clone https://github.com/waonpimol/web_sport_customer.git
-```
-
-### 2. ตั้งค่า AWS CLI
+### 1. ตั้งค่า AWS CLI
 ```
 aws configure
 ```
@@ -18,13 +13,13 @@ aws configure
 
 #### อย่าลืม create key pairs ใน aws
 
-### 3. Initialize และตรวจสอบ
+### 2. Initialize และตรวจสอบ
 ```
 terraform init
 terraform plan
 ```
 
-### 4. Deploy ระบบ
+### 3. Deploy ระบบ
 ```
 terraform apply 
 ```
@@ -33,7 +28,7 @@ terraform apply
 yes
 ```
 
-### 5. เข้าใช้งาน
+### 4. เข้าใช้งาน
 นำ URL จาก output ไปเปิดใน browser เช่น:
 ตัวอย่าง
 ```
